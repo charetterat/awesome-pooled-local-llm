@@ -1,0 +1,240 @@
+{
+  "_comment": "Single source of truth. Every row is a real repo verified live on 2026-10-07 via the GitHub API through the charetterat HK proxy. Stars are a snapshot, not a constant. 'why_here' explains what a reader gets. Nothing is inferred — anything we did not verify live is marked so.",
+  "_scope": "Running one LLM across MORE THAN ONE device you already own — phones, Macs, PCs, boards, browsers — instead of buying a bigger GPU. Cross-device pooled/split/p2p inference. NOT model-parallel research frameworks, NOT cloud API gateways, NOT single-device VRAM tricks (those get one section each, clearly bounded).",
+  "updated": "2026-10-07",
+  "entries": [
+    {
+      "name": "Backburner",
+      "url": "https://github.com/StayLameBro/backburner",
+      "stars": 771,
+      "added": "2026-10-01",
+      "kind": "flagship / cross-device",
+      "hardware": "M-series Mac + iPhone 15 Pro or newer over USB-C",
+      "what": "Your iPhone runs the tail layers (prefill) or old-KV attention (decode) while the Mac runs the rest, pipelined over a 10 Gb/s cable. Measured +29-44% prefill at 16k-48k ctx, 196k-229k context at 8-bit on an iPhone 17 Pro Max. Greedy output token-identical with and without the phone.",
+      "requirements": "Apple Silicon Mac (tested M4 Pro 24 GB); iPhone 15 Pro+; a 10 Gb/s USB-C cable (the cable in the iPhone box is USB 2 and too slow); AltStore for the app; sysctl iogpu.wired_limit_mb reset after every reboot",
+      "why_here": "The entry that made this list necessary. Ships bench/*.jsonl raw data and names what it did NOT test. 78 forks in 6 days; community results threads are open.",
+      "gotchas": [
+        "8 GB Macs: stock 27B does not fit — split decode is the path (docs/SPLIT-DECODE.md), ~4 tok/s on a MacBook Neo + iPhone Air",
+        "iPhone Air's port is USB 2 (480 Mb/s) — the cable bottleneck is real per-device, check your port before blaming the software",
+        "macOS resets the GPU wired-memory limit on every reboot; re-run the sysctl or the model gets paged out"
+      ],
+      "summary": "iPhone helps a Mac run a bigger model over one cable"
+    },
+    {
+      "name": "Pooled",
+      "url": "https://github.com/Nehanth/pooled",
+      "stars": 575,
+      "added": "2026-09-01",
+      "kind": "cross-device / browser",
+      "hardware": "any browser (WebGPU), phone or desktop",
+      "what": "Peer-to-peer LLM inference in the browser: pool your devices over WebRTC to run big open models, for chat and coding agents. No install — it runs in a tab.",
+      "why_here": "Same 'devices you already own' idea as Backburner but with zero cable and zero install; the devices talk WebRTC. Good when your second device is a phone you don't want to jailbreak-side-load.",
+      "summary": "P2P inference in the browser — every device with a tab joins the pool"
+    },
+    {
+      "name": "exo",
+      "url": "https://github.com/exo-explore/exo",
+      "stars": 47769,
+      "added": "2024 (long-established)",
+      "kind": "cluster",
+      "hardware": "Macs, GPUs, phones on one network",
+      "what": "Run frontier models distributed across your existing devices. The incumbent in this space — if you have several Apple-silicon machines this is the lowest-friction path.",
+      "why_here": "The benchmark every project in this list is implicitly compared against. Included so you don't have to discover it from a benchmark table.",
+      "summary": "The incumbent: frontier models across your existing devices"
+    },
+    {
+      "name": "lmstudio-two-pc-split",
+      "url": "https://github.com/momcilovicrobert-momc/lmstudio-two-pc-split",
+      "stars": 2,
+      "added": "2026-09-15",
+      "kind": "two-PC / llama.cpp RPC",
+      "hardware": "two PCs on one LAN (AMD Radeon + anything, Vulkan)",
+      "what": "Run a model too big for one GPU in LM Studio across two PCs over LAN, via llama.cpp RPC: two DLLs + one env var (GGML_RPC_SERVERS). No LM Studio source changes.",
+      "why_here": "The cheapest possible demo of llama.cpp RPC splitting: if you thought you needed a framework, this shows two DLLs and an env var can be the whole thing.",
+      "summary": "Two PCs, one model, LM Studio: two DLLs + one env var"
+    },
+    {
+      "name": "DRIFT",
+      "url": "https://github.com/TaewoooPark/DRIFT",
+      "stars": 26,
+      "added": "2026-06-30",
+      "kind": "heterogeneous pipeline",
+      "hardware": "Mac (Apple MPS) + Windows PC (NVIDIA CUDA)",
+      "what": "One LLM split across a Mac and a Windows PC — heterogeneous pipeline inference over a framework-neutral wire, bit-for-bit identical to single-machine. No torch.distributed.",
+      "why_here": "The only entry here that spans Apple + NVIDIA in one pipeline with an output-equivalence claim.",
+      "summary": "One model split across a Mac (MPS) + Windows PC (CUDA)"
+    },
+    {
+      "name": "llamacpp-distributed-inference",
+      "url": "https://github.com/ADT109119/llamacpp-distributed-inference",
+      "stars": 96,
+      "added": "2025 (established)",
+      "kind": "LAN / Electron",
+      "hardware": "multiple PCs on a LAN",
+      "what": "A GUI wrapper that turns llama.cpp RPC into a point-and-click distributed setup across machines on a local network.",
+      "why_here": "If the two-DLL route is too manual, this is the GUI alternative for the same underlying llama.cpp RPC mechanism.",
+      "summary": "GUI wrapper for llama.cpp RPC across a LAN"
+    },
+    {
+      "name": "esp32s3-distributed-ai",
+      "url": "https://github.com/wladimiravila/esp32s3-distributed-ai",
+      "stars": 110,
+      "added": "2026-07-30",
+      "kind": "embedded / edge",
+      "hardware": "3x ESP32-S3 boards over ESP-NOW",
+      "what": "Distributed 56M-parameter LLM inference across three ESP32-S3 boards, split-PLE + KV cache, fully offline, no OS.",
+      "why_here": "The extreme small end. Proof the split principle works on boards with no OS and megabytes of RAM — a useful boundary marker for what 'pooling' can mean.",
+      "summary": "One LLM across 3 ESP32 boards, fully offline"
+    },
+    {
+      "name": "network-container",
+      "url": "https://github.com/aphillipsmusik/network-container",
+      "stars": 0,
+      "added": "2026-04-12",
+      "kind": "cluster / docker",
+      "hardware": "networked machines, Docker",
+      "what": "Distributed LLM cluster pooling RAM/VRAM across machines, with no central 51% orchestrator and workers free to leave.",
+      "why_here": "Interesting governance take on pooling (workers own their compute). Early — zero stars — listed because the mechanism differs from everything else here.",
+      "gotchas": [
+        "no license file — check before redistributing any part of it"
+      ],
+      "summary": "RAM/VRAM pool across machines, no central orchestrator"
+    },
+    {
+      "name": "tensorgrid",
+      "url": "https://github.com/konstantinos193/tensorgrid",
+      "stars": 0,
+      "added": "2026-04-12",
+      "kind": "cluster / Rust",
+      "hardware": "machines on a LAN, CPU+RAM+GPU",
+      "what": "Distributed unified compute runtime in Rust — pools CPU, RAM, GPU and VRAM across computers on a local network.",
+      "why_here": "Same goal as exo but written in Rust and aimed at heterogeneous LANs rather than a Mac-first experience. Early.",
+      "gotchas": [
+        "no license file yet"
+      ],
+      "summary": "Rust runtime pooling CPU/RAM/GPU across a LAN"
+    },
+    {
+      "name": "memcloud",
+      "url": "https://github.com/vibhanshu2001/memcloud",
+      "stars": 14,
+      "added": "2025-12-07",
+      "kind": "memory tier",
+      "hardware": "macOS/Windows/Linux on one LAN",
+      "what": "Distributed in-memory data store in Rust — nodes pool RAM into a shared KV store aimed at LLM serving, mDNS discovery, peer-to-peer.",
+      "why_here": "Not inference itself: it is the memory tier that a split inference setup can sit on. Listed for that specific role.",
+      "gotchas": [
+        "last pushed 2025-12 — treat as dormant"
+      ],
+      "summary": "Pooled RAM as a KV-store memory tier (dormant)"
+    },
+    {
+      "name": "OpenFabric",
+      "url": "https://github.com/tdev09/OpenFabric",
+      "stars": 4,
+      "added": "2026-05-22",
+      "kind": "mesh",
+      "hardware": "macOS/Linux/Windows/Raspberry Pi",
+      "what": "Zero-config decentralized local compute mesh: pool RAM, GPU VRAM and storage across machines to run distributed AI models and sandboxed workloads.",
+      "why_here": "The widest hardware envelope here (Raspberry Pi included). Very early.",
+      "gotchas": [
+        "no license file yet"
+      ],
+      "summary": "Zero-config mesh incl. Raspberry Pi (very early)"
+    },
+    {
+      "name": "moe-l2",
+      "url": "https://github.com/yalun753/moe-l2",
+      "stars": 146,
+      "added": "2026-07-26",
+      "kind": "single-device VRAM (bounded)",
+      "hardware": "one 8 GB+ GPU",
+      "what": "MoE expert offload for low-VRAM GPUs — run 100B+ MoE models on 8 GB cards via expert caching with LRU hot experts, OpenAI-compatible proxy, GGUF.",
+      "why_here": "Listed as the boundary of this list: it is the strongest single-device alternative when your second device isn't available. If you can't pool, this is what to compare against.",
+      "gotchas": [
+        "NOT cross-device — single machine only"
+      ],
+      "summary": "Single-device alternative: 100B+ MoE on an 8 GB card"
+    },
+    {
+      "name": "dsv41-flash-offload",
+      "url": "https://github.com/0xSero/dsv41-flash-offload",
+      "stars": 101,
+      "added": "2026-10-02",
+      "kind": "single-device tiered (bounded)",
+      "hardware": "one 24 GB RTX 3090 + DDR4 + NVMe",
+      "what": "DeepSeek-V4.1-Flash EXL3 on one 24 GB card with staged-DMA prefill, CPU expert tier, elastic VRAM expert cache, weights on disk, OpenAI API.",
+      "why_here": "The other boundary entry: RAM+SSD as the 'second device' on one box. Compare pooled-vs-tiered on your own workload before choosing.",
+      "gotchas": [
+        "single machine; the 'pooling' is across memory tiers, not devices"
+      ],
+      "summary": "Single-device alternative: RAM+SSD tiering on one 3090"
+    },
+    {
+      "name": "ComfyUI-MultiGPU",
+      "url": "https://github.com/pollockjj/ComfyUI-MultiGPU",
+      "stars": 992,
+      "added": "2024-12 (established)",
+      "kind": "image-gen sibling (bounded)",
+      "hardware": "one or more GPUs",
+      "what": "One-click 'Virtual VRAM' for ComfyUI UNet/CLIP loaders plus MultiGPU integration, managing offload and block swap.",
+      "why_here": "Image generation, not LLM — listed because it is the mature proof that block-swap offload works at scale, and image-gen readers outnumber LLM readers for this technique.",
+      "gotchas": [
+        "ComfyUI/workflow only; not a chat or agent runtime"
+      ],
+      "summary": "Image-gen sibling: mature block-swap proof (not LLM)"
+    }
+  ],
+  "verification_sources": [
+    {
+      "name": "backburner repo",
+      "url": "https://github.com/StayLameBro/backburner",
+      "expected_token": "iPhone"
+    },
+    {
+      "name": "pooled repo",
+      "url": "https://github.com/Nehanth/pooled",
+      "expected_token": "Peer-to-peer"
+    },
+    {
+      "name": "exo repo",
+      "url": "https://github.com/exo-explore/exo",
+      "expected_token": "frontier"
+    },
+    {
+      "name": "lmstudio-two-pc-split",
+      "url": "https://github.com/momcilovicrobert-momc/lmstudio-two-pc-split",
+      "expected_token": "GGML_RPC_SERVERS"
+    },
+    {
+      "name": "DRIFT",
+      "url": "https://github.com/TaewoooPark/DRIFT",
+      "expected_token": "bit-for-bit"
+    },
+    {
+      "name": "esp32s3-distributed-ai",
+      "url": "https://github.com/wladimiravila/esp32s3-distributed-ai",
+      "expected_token": "ESP32-S3"
+    },
+    {
+      "name": "moe-l2",
+      "url": "https://github.com/yalun753/moe-l2",
+      "expected_token": "expert"
+    },
+    {
+      "name": "dsv41-flash-offload",
+      "url": "https://github.com/0xSero/dsv41-flash-offload",
+      "expected_token": "3090"
+    },
+    {
+      "name": "backburner results thread (8GB Mac)",
+      "url": "https://github.com/StayLameBro/backburner/issues/1",
+      "expected_token": "6,073"
+    },
+    {
+      "name": "backburner results thread (M4 Pro)",
+      "url": "https://github.com/StayLameBro/backburner/issues/14",
+      "expected_token": "L32"
+    }
+  ]
+}
