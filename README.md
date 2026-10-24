@@ -10,7 +10,7 @@ What each project actually does, what hardware it needs, and the gotchas that
 only show up in issue threads — every entry linked to its source.
 
 > ⛔ **Not affiliated with any project listed here.** Star counts are a snapshot
-> (2026-10-24), not a ranking. We have not benchmarked these projects
+> (2026-10-25), not a ranking. We have not benchmarked these projects
 > ourselves; numbers quoted are each project's own published results.
 
 </div>
