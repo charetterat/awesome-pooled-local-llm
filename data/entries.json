@@ -1,7 +1,7 @@
 {
   "_comment": "Single source of truth. Every row is a real repo verified live on 2026-10-07 via the GitHub API through the charetterat HK proxy. Stars are a snapshot, not a constant. 'why_here' explains what a reader gets. Nothing is inferred — anything we did not verify live is marked so.",
   "_scope": "Running one LLM across MORE THAN ONE device you already own — phones, Macs, PCs, boards, browsers — instead of buying a bigger GPU. Cross-device pooled/split/p2p inference. NOT model-parallel research frameworks, NOT cloud API gateways, NOT single-device VRAM tricks (those get one section each, clearly bounded).",
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "entries": [
     {
       "name": "Backburner",
