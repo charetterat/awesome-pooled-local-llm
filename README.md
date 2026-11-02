@@ -10,7 +10,7 @@ What each project actually does, what hardware it needs, and the gotchas that
 only show up in issue threads — every entry linked to its source.
 
 > ⛔ **Not affiliated with any project listed here.** Star counts are a snapshot
-> (2026-10-28), not a ranking. We have not benchmarked these projects
+> (2026-11-03), not a ranking. We have not benchmarked these projects
 > ourselves; numbers quoted are each project's own published results.
 
 </div>
@@ -21,20 +21,20 @@ only show up in issue threads — every entry linked to its source.
 
 | project | devices it pools | what you actually get | ★ |
 |---|---|---|---:|
-| [Backburner](https://github.com/StayLameBro/backburner) | M-series Mac + iPhone 15 Pro or newer over USB-C | iPhone helps a Mac run a bigger model over one cable | 771 |
-| [Pooled](https://github.com/Nehanth/pooled) | any browser (WebGPU), phone or desktop | P2P inference in the browser — every device with a tab joins the pool | 575 |
-| [exo](https://github.com/exo-explore/exo) | Macs, GPUs, phones on one network | The incumbent: frontier models across your existing devices | 47769 |
-| [lmstudio-two-pc-split](https://github.com/momcilovicrobert-momc/lmstudio-two-pc-split) | two PCs on one LAN (AMD Radeon + anything, Vulkan) | Two PCs, one model, LM Studio: two DLLs + one env var | 2 |
+| [Backburner](https://github.com/StayLameBro/backburner) | M-series Mac + iPhone 15 Pro or newer over USB-C | iPhone helps a Mac run a bigger model over one cable | 1153 |
+| [Pooled](https://github.com/Nehanth/pooled) | any browser (WebGPU), phone or desktop | P2P inference in the browser — every device with a tab joins the pool | 624 |
+| [exo](https://github.com/exo-explore/exo) | Macs, GPUs, phones on one network | The incumbent: frontier models across your existing devices | 48153 |
+| [lmstudio-two-pc-split](https://github.com/momcilovicrobert-momc/lmstudio-two-pc-split) | two PCs on one LAN (AMD Radeon + anything, Vulkan) | Two PCs, one model, LM Studio: two DLLs + one env var | 3 |
 | [DRIFT](https://github.com/TaewoooPark/DRIFT) | Mac (Apple MPS) + Windows PC (NVIDIA CUDA) | One model split across a Mac (MPS) + Windows PC (CUDA) | 26 |
-| [llamacpp-distributed-inference](https://github.com/ADT109119/llamacpp-distributed-inference) | multiple PCs on a LAN | GUI wrapper for llama.cpp RPC across a LAN | 96 |
-| [esp32s3-distributed-ai](https://github.com/wladimiravila/esp32s3-distributed-ai) | 3x ESP32-S3 boards over ESP-NOW | One LLM across 3 ESP32 boards, fully offline | 110 |
+| [llamacpp-distributed-inference](https://github.com/ADT109119/llamacpp-distributed-inference) | multiple PCs on a LAN | GUI wrapper for llama.cpp RPC across a LAN | 95 |
+| [esp32s3-distributed-ai](https://github.com/wladimiravila/esp32s3-distributed-ai) | 3x ESP32-S3 boards over ESP-NOW | One LLM across 3 ESP32 boards, fully offline | 113 |
 | [network-container](https://github.com/aphillipsmusik/network-container) | networked machines, Docker | RAM/VRAM pool across machines, no central orchestrator | 0 |
-| [tensorgrid](https://github.com/konstantinos193/tensorgrid) | machines on a LAN, CPU+RAM+GPU | Rust runtime pooling CPU/RAM/GPU across a LAN | 0 |
+| [tensorgrid](https://github.com/konstantinos193/tensorgrid) | machines on a LAN, CPU+RAM+GPU | Rust runtime pooling CPU/RAM/GPU across a LAN | 2 |
 | [memcloud](https://github.com/vibhanshu2001/memcloud) | macOS/Windows/Linux on one LAN | Pooled RAM as a KV-store memory tier (dormant) | 14 |
-| [OpenFabric](https://github.com/tdev09/OpenFabric) | macOS/Linux/Windows/Raspberry Pi | Zero-config mesh incl. Raspberry Pi (very early) | 4 |
+| [OpenFabric](https://github.com/tdev09/OpenFabric) | macOS/Linux/Windows/Raspberry Pi | Zero-config mesh incl. Raspberry Pi (very early) | 5 |
 | [moe-l2](https://github.com/yalun753/moe-l2) | one 8 GB+ GPU | Single-device alternative: 100B+ MoE on an 8 GB card | 146 |
-| [dsv41-flash-offload](https://github.com/0xSero/dsv41-flash-offload) | one 24 GB RTX 3090 + DDR4 + NVMe | Single-device alternative: RAM+SSD tiering on one 3090 | 101 |
-| [ComfyUI-MultiGPU](https://github.com/pollockjj/ComfyUI-MultiGPU) | one or more GPUs | Image-gen sibling: mature block-swap proof (not LLM) | 992 |
+| [dsv41-flash-offload](https://github.com/0xSero/dsv41-flash-offload) | one 24 GB RTX 3090 + DDR4 + NVMe | Single-device alternative: RAM+SSD tiering on one 3090 | 155 |
+| [ComfyUI-MultiGPU](https://github.com/pollockjj/ComfyUI-MultiGPU) | one or more GPUs | Image-gen sibling: mature block-swap proof (not LLM) | 993 |
 
 ---
 

@@ -1,12 +1,12 @@
 {
-  "_comment": "Single source of truth. Every row is a real repo verified live on 2026-10-07 via the GitHub API through the charetterat HK proxy. Stars are a snapshot, not a constant. 'why_here' explains what a reader gets. Nothing is inferred — anything we did not verify live is marked so.",
+  "_comment": "Single source of truth. Every row is a real repo verified live on 2026-11-03 via the GitHub API through the charetterat HK proxy. Stars are a snapshot, not a constant. 'why_here' explains what a reader gets. Nothing is inferred — anything we did not verify live is marked so.",
   "_scope": "Running one LLM across MORE THAN ONE device you already own — phones, Macs, PCs, boards, browsers — instead of buying a bigger GPU. Cross-device pooled/split/p2p inference. NOT model-parallel research frameworks, NOT cloud API gateways, NOT single-device VRAM tricks (those get one section each, clearly bounded).",
-  "updated": "2026-10-28",
+  "updated": "2026-11-03",
   "entries": [
     {
       "name": "Backburner",
       "url": "https://github.com/StayLameBro/backburner",
-      "stars": 771,
+      "stars": 1153,
       "added": "2026-10-01",
       "kind": "flagship / cross-device",
       "hardware": "M-series Mac + iPhone 15 Pro or newer over USB-C",
@@ -23,7 +23,7 @@
     {
       "name": "Pooled",
       "url": "https://github.com/Nehanth/pooled",
-      "stars": 575,
+      "stars": 624,
       "added": "2026-09-01",
       "kind": "cross-device / browser",
       "hardware": "any browser (WebGPU), phone or desktop",
@@ -34,7 +34,7 @@
     {
       "name": "exo",
       "url": "https://github.com/exo-explore/exo",
-      "stars": 47769,
+      "stars": 48153,
       "added": "2024 (long-established)",
       "kind": "cluster",
       "hardware": "Macs, GPUs, phones on one network",
@@ -45,7 +45,7 @@
     {
       "name": "lmstudio-two-pc-split",
       "url": "https://github.com/momcilovicrobert-momc/lmstudio-two-pc-split",
-      "stars": 2,
+      "stars": 3,
       "added": "2026-09-15",
       "kind": "two-PC / llama.cpp RPC",
       "hardware": "two PCs on one LAN (AMD Radeon + anything, Vulkan)",
@@ -67,7 +67,7 @@
     {
       "name": "llamacpp-distributed-inference",
       "url": "https://github.com/ADT109119/llamacpp-distributed-inference",
-      "stars": 96,
+      "stars": 95,
       "added": "2025 (established)",
       "kind": "LAN / Electron",
       "hardware": "multiple PCs on a LAN",
@@ -78,7 +78,7 @@
     {
       "name": "esp32s3-distributed-ai",
       "url": "https://github.com/wladimiravila/esp32s3-distributed-ai",
-      "stars": 110,
+      "stars": 113,
       "added": "2026-07-30",
       "kind": "embedded / edge",
       "hardware": "3x ESP32-S3 boards over ESP-NOW",
@@ -103,7 +103,7 @@
     {
       "name": "tensorgrid",
       "url": "https://github.com/konstantinos193/tensorgrid",
-      "stars": 0,
+      "stars": 2,
       "added": "2026-04-12",
       "kind": "cluster / Rust",
       "hardware": "machines on a LAN, CPU+RAM+GPU",
@@ -131,7 +131,7 @@
     {
       "name": "OpenFabric",
       "url": "https://github.com/tdev09/OpenFabric",
-      "stars": 4,
+      "stars": 5,
       "added": "2026-05-22",
       "kind": "mesh",
       "hardware": "macOS/Linux/Windows/Raspberry Pi",
@@ -159,7 +159,7 @@
     {
       "name": "dsv41-flash-offload",
       "url": "https://github.com/0xSero/dsv41-flash-offload",
-      "stars": 101,
+      "stars": 155,
       "added": "2026-10-02",
       "kind": "single-device tiered (bounded)",
       "hardware": "one 24 GB RTX 3090 + DDR4 + NVMe",
@@ -173,7 +173,7 @@
     {
       "name": "ComfyUI-MultiGPU",
       "url": "https://github.com/pollockjj/ComfyUI-MultiGPU",
-      "stars": 992,
+      "stars": 993,
       "added": "2024-12 (established)",
       "kind": "image-gen sibling (bounded)",
       "hardware": "one or more GPUs",
